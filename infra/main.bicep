@@ -5,7 +5,7 @@
 // ============================================================
 
 param location string = 'uksouth'
-param prefix string = 'fleet'
+param prefix string = 'fleetcn'
 param environment string = 'prod'
 
 // ============================================================
