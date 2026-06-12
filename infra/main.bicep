@@ -131,6 +131,27 @@ resource synapseWorkspace 'Microsoft.Synapse/workspaces@2021-06-01' = {
     sqlAdministratorLoginPassword: 'FleetP@ss2024!'
   }
 }
+// ============================================================
+// LOGIC APP
+// ============================================================
+resource logicApp 'Microsoft.Logic/workflows@2019-05-01' = {
+  name: 'la-${prefix}-${environment}'
+  location: location
+  identity: {
+    type: 'SystemAssigned'
+  }
+  properties: {
+    state: 'Enabled'
+    definition: {
+      '$schema': 'https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#'
+      contentVersion: '1.0.0.0'
+      triggers: {}
+      actions: {}
+    }
+  }
+}
+
+output logicAppName string = logicApp.name
 
 // ============================================================
 // OUTPUTS
