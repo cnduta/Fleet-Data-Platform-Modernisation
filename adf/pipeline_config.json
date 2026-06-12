@@ -1,0 +1,14 @@
+{
+  "fileList": [
+    {
+      "sourceFile": "fleet_batch_001.csv",
+      "targetFolder": "sftp_ingestion/2024/06/10",
+      "description": "Fleet telematics batch 1 - 10 vehicles"
+    },
+    {
+      "sourceFile": "fleet_batch_002.csv",
+      "targetFolder": "sftp_ingestion/2024/06/10",
+      "description": "Fleet telematics batch 2 - 10 vehicles"
+    }
+  ]
+}
