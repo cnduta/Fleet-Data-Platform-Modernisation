@@ -1,0 +1,21 @@
+{
+    "name": "ds_sftp_fleet_source",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_sftp_sftpcloud",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "SftpLocation"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    }
+}

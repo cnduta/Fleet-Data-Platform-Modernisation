@@ -1,0 +1,22 @@
+{
+    "name": "ls_sftp_sftpcloud",
+    "properties": {
+        "annotations": [],
+        "type": "Sftp",
+        "typeProperties": {
+            "host": "eu-west-1.sftpcloud.io",
+            "port": 22,
+            "skipHostKeyValidation": true,
+            "authenticationType": "Basic",
+            "userName": "16616b5ee04245f0a511fd513d628dd7",
+            "password": {
+                "type": "AzureKeyVaultSecret",
+                "store": {
+                    "referenceName": "ls_keyvault",
+                    "type": "LinkedServiceReference"
+                },
+                "secretName": "sftp-password"
+            }
+        }
+    }
+}
