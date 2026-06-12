@@ -1,0 +1,98 @@
+{
+    "definition": {
+        "metadata": {
+            "notes": {}
+        },
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "triggers": {
+            "Recurrence": {
+                "type": "Recurrence",
+                "recurrence": {
+                    "interval": 15,
+                    "frequency": "Minute"
+                }
+            }
+        },
+        "actions": {
+            "HTTP": {
+                "type": "Http",
+                "inputs": {
+                    "uri": "https://management.azure.com/subscriptions/ab7df93d-05e6-43c6-a213-0cf84437bf8f/resourceGroups/rg-fleet-platform-prod/providers/Microsoft.DataFactory/factories/adf-fleetcn-prod/queryPipelineRuns?api-version=2018-06-01",
+                    "method": "POST",
+                    "body": {
+                        "lastUpdatedAfter": "@{addMinutes(utcNow(), -15)}",
+                        "lastUpdatedBefore": "@{utcNow()}"
+                    },
+                    "authentication": {
+                        "type": "ManagedServiceIdentity",
+                        "audience": "https://management.azure.com"
+                    }
+                },
+                "runAfter": {},
+                "runtimeConfiguration": {
+                    "contentTransfer": {
+                        "transferMode": "Chunked"
+                    }
+                }
+            },
+            "Condition": {
+                "type": "If",
+                "expression": {
+                    "and": [
+                        {
+                            "equals": [
+                                "@contains(string(body('HTTP')), 'Failed')",
+                                "@true"
+                            ]
+                        },
+                        {
+                            "equals": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                "actions": {
+                    "HTTP_1": {
+                        "type": "Http",
+                        "inputs": {
+                            "uri": "https://ntfy.sh/fleet-adf-alerts-cnduta",
+                            "method": "POST",
+                            "headers": {
+                                "Title": "AD Pipeline Failure- Fleet Platform"
+                            },
+                            "body": "ADF Pipeline failure detected in adf-fleetcn-prod @{utcNow()} . Check ADF Monitor immediately."
+                        },
+                        "runtimeConfiguration": {
+                            "contentTransfer": {
+                                "transferMode": "Chunked"
+                            }
+                        }
+                    }
+                },
+                "else": {
+                    "actions": {}
+                },
+                "runAfter": {
+                    "HTTP": [
+                        "Succeeded"
+                    ]
+                }
+            }
+        },
+        "parameters": {
+            "$connections": {
+                "type": "Object",
+                "defaultValue": {}
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "type": "Object",
+            "value": {}
+        }
+    }
+}
