@@ -11,7 +11,7 @@
 ![Bicep](https://shields.io)
 ![Python](https://shields.io)
 ![Power BI](https://shields.io)
-![Status](https://img.shields.io/badge/Status-In progress-Amber)
+![Status](https://img.shields.io/badge/Status-In progress-Orange)
 
 ## 🏗️ Lambda Architecture & Platform Mapping
 
