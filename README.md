@@ -1,9 +1,9 @@
 # Fleet Data Platform Modernisation
 
-![Azure](https://img.shields.io/badge/Azure-Data%20Engineering-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![ADF](https://img.shields.io/badge/Azure%20Data%20Factory-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat&logo=databricks&logoColor=white)
-![Synapse](https://img.shields.io/badge/Azure%20Synapse-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Azure](https://shields.io)
+![ADF](https://shields.io)
+![Databricks](https://shields.io)
+![Synapse](https://shields.io)
 ![Event Hubs](https://shields.io)
 ![Logic Apps](https://shields.io)
 ![Log Analytics](https://shields.io)
@@ -11,7 +11,7 @@
 ![Bicep](https://shields.io)
 ![Python](https://shields.io)
 ![Power BI](https://shields.io)
-![Status](https://img.shields.io/badge/Status-In progress-Orange)
+![Status](https://shields.io)
 
 ## 🏗️ Lambda Architecture & Platform Mapping
 
