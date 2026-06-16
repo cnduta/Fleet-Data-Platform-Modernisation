@@ -8,7 +8,7 @@
 ![Log Analytics](https://img.shields.io/badge/Log%20Analytics-0078D4?style=flat&logo=loganalytics&logoColor=white)
 ![Purview](https://img.shields.io/badge/Purview-0078D4?style=flat&logo=purview&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat&logo=bicep&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In-progress-Amber)
+![Status](https://img.shields.io/badge/Status-In%20progress-Amber)
 
 ## 🏗️ Lambda Architecture & Platform Mapping
 
