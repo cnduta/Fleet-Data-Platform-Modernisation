@@ -79,8 +79,7 @@ graph LR
 
 An end-to-end enterprise Azure data platform simulating a legacy fleet telematics system modernization. This project replaces brittle, manual SFTP flat-file processes with a metadata-driven ingestion framework, a real-time event streaming architecture, and robust infrastructure monitoring.
 
-## 🏗️ Architecture Diagram
-*🚀 [Tip: Use a tool like Excalidraw, draw.io, or Lucidchart to map your data flow: Legacy File/API ➔ Event Hubs/ADF ➔ ADLS Gen2 ➔ Databricks/Synapse ➔ Power BI, with Logic Apps and Log Analytics wrapped around it. Paste the image or screenshot link here.]*
+
 
 ---
 
