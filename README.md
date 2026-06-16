@@ -1,6 +1,84 @@
 # Fleet Data Platform Modernisation
 
-### 🛠️ Azure Data Factory | Azure Databricks (PySpark) | Event Hubs | Snowflake/Synapse | dbt | Bicep (IaC) | Log Analytics (KQL) | Microsoft Purview
+![Azure](https://img.shields.io/badge/Azure-Data%20Engineering-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![ADF](https://img.shields.io/badge/Azure%20Data%20Factory-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat&logo=databricks&logoColor=white)
+![Synapse](https://img.shields.io/badge/Azure%20Synapse-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Event Hubs](https://shields.io)
+![Logic Apps](https://shields.io)
+![Log Analytics](https://shields.io)
+![Purview](https://shields.io)
+![Bicep](https://shields.io)
+![Python](https://shields.io)
+![Power BI](https://shields.io)
+![Status](https://shields.io)
+
+## 🏗️ Lambda Architecture & Platform Mapping
+
+The platform implements a Lambda Architecture to handle both metadata-driven batch historical data and real-time fleet telemetry streams using the Azure Ecosystem.
+
+```mermaid
+graph LR
+    %% Data Sources
+    subgraph Sources [Data Sources]
+        SFTP[Legacy SFTP <br/> Flat Files]
+        API[Fleet REST API <br/> Real-time Telemetry]
+    end
+
+    %% Ingestion Layer
+    subgraph Ingest [Ingest & Stream]
+        ADF[Azure Data Factory <br/> Metadata-Driven Ingestion]
+        EH[Azure Event Hubs <br/> Python Streaming Producer]
+    end
+
+    %% Storage & Processing (Medallion)
+    subgraph Storage [Storage & Processing: ADLS Gen2]
+        direction TB
+        B[(Bronze Layer <br/> Raw Ingest)] 
+        S[(Silver Layer <br/> Cleaned & Deduplicated)] 
+        G[(Gold Layer <br/> Business Metrics)]
+        
+        B -->|Synapse PySpark| S
+        S -->|Synapse PySpark| G
+    end
+
+    %% Serving & Presentation Layer
+    subgraph Serve [Serve & Analyze]
+        Syn[Synapse Analytics <br/> Serverless SQL Views]
+        PBI[Power BI <br/> Interactive Dashboards]
+    end
+
+    %% Governance & Observability Wrapper
+    subgraph Platform [Cross-Cutting Governance & Observability]
+        IaC[Azure Bicep <br/> Infrastructure as Code]
+        LA[Log Analytics <br/> KQL Monitoring]
+        LAps[Azure Logic Apps <br/> Failure Alerts]
+        Pur[Microsoft Purview <br/> Data Catalog & Lineage]
+    end
+
+    %% Pipeline Connections
+    SFTP -->|Scheduled Lookup| ADF
+    API -->|EventHubProducerClient| EH
+    
+    ADF -->|Landing Storage| B
+    EH -->|Streaming Spark Capture| B
+    
+    G -->|Relational Mapping| Syn
+    Syn -->|Direct Query/Import| PBI
+
+    %% Monitoring Links (Invisible references to anchor the diagram flow)
+    ADF -.->|Logs| LA
+    EH -.->|Logs| LA
+    LA -.->|Triggers| LAps
+    Storage -.->|Scans| Pur
+
+    %% Styling
+    style Sources fill:#f9f9f9,stroke:#333,stroke-width:1px
+    style Ingest fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px
+    style Storage fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style Serve fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style Platform fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px
+```
 
 An end-to-end enterprise Azure data platform simulating a legacy fleet telematics system modernization. This project replaces brittle, manual SFTP flat-file processes with a metadata-driven ingestion framework, a real-time event streaming architecture, and robust infrastructure monitoring.
 
