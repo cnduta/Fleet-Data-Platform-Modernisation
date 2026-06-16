@@ -1,5 +1,7 @@
 # Fleet Data Platform Modernisation
 
+### 🛠️ Azure Data Factory | Azure Databricks (PySpark) | Event Hubs | Snowflake/Synapse | dbt | Bicep (IaC) | Log Analytics (KQL) | Microsoft Purview
+
 An end-to-end enterprise Azure data platform simulating a legacy fleet telematics system modernization. This project replaces brittle, manual SFTP flat-file processes with a metadata-driven ingestion framework, a real-time event streaming architecture, and robust infrastructure monitoring.
 
 ## 🏗️ Architecture Diagram
@@ -39,16 +41,9 @@ An end-to-end enterprise Azure data platform simulating a legacy fleet telematic
 *   **Bronze / Silver / Gold:** Implementing data cleansing, over-speeding event calculations, and business metric calculations using PySpark notebooks in Synapse Studio.
 *   **Downstream Analytics:** Generating analytical relational views in Synapse Serverless pools for direct ingestion into an interactive Power BI operational monitor.
 
----
+### Phase 6: Observability, Governance & Lineage (In Progress)
+*   **Centralized Logging:** Consolidated all diagnostic and metric logs from Azure Data Factory and Databricks into an Azure Log Analytics workspace.
+*   **Operational Intelligence:** Wrote custom Kusto Query Language (KQL) scripts to build monitoring alerts for pipeline failures, processing latency, and ingestion bottlenecks.
+*   **Data Governance:** Implemented Microsoft Purview stubs to catalog data assets, map data lineages across the Medallion layers, and enforce data privacy compliance.
 
-## 🖥️ Sample Platform Logic
 
-### 🔍 Operational Monitoring with KQL
-This is a core script utilized within the Log Analytics workspace to flag critical pipeline failure spikes within 5-minute ingestion windows:
-
-```kusto
-// Insert your favorite pipeline tracing KQL script here later!
-ADFPipelineRun
-| where Status == "Failed"
-| summarize Failures = count() by PipelineName, bin(TimeGenerated, 5m)
-```
