@@ -1,17 +1,14 @@
 # Fleet Data Platform Modernisation
 
-![Azure](https://shields.io)
-![ADF](https://shields.io)
-![Databricks](https://shields.io)
-![Synapse](https://shields.io)
-![Event Hubs](https://shields.io)
-![Logic Apps](https://shields.io)
-![Log Analytics](https://shields.io)
-![Purview](https://shields.io)
-![Bicep](https://shields.io)
-![Python](https://shields.io)
-![Power BI](https://shields.io)
-![Status](https://shields.io)
+![Azure](https://img.shields.io/badge/Azure-Data%20Engineering-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![ADF](https://img.shields.io/badge/Azure%20Data%20Factory-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Synapse](https://img.shields.io/badge/Azure%20Synapse-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Event Hubs](https://img.shields.io/badge/Event%20Hubs-0078D4?style=flat&logo=eventhubs&logoColor=white)
+![Logic Apps](https://img.shields.io/badge/Logic%20Apps-0078D4?style=flat&logo=logicapps&logoColor=white)
+![Log Analytics](https://img.shields.io/badge/Log%20Analytics-0078D4?style=flat&logo=loganalytics&logoColor=white)
+![Purview](https://img.shields.io/badge/Purview-0078D4?style=flat&logo=purview&logoColor=white)
+![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat&logo=bicep&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In-progress-Amber)
 
 ## 🏗️ Lambda Architecture & Platform Mapping
 
