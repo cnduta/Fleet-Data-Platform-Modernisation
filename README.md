@@ -1,17 +1,15 @@
 # Fleet Data Platform Modernisation
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Azure-Data%20Engineering-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="Azure"/>
-  <img src="https://img.shields.io/badge/Azure%20Data%20Factory-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="ADF"/>
-  <img src="https://img.shields.io/badge/Azure%20Synapse-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="Synapse"/>
-  <img src="https://img.shields.io/badge/Event%20Hubs-0078D4?style=flat&logo=azure-event-hubs&logoColor=white" alt="Event Hubs"/>
-  <img src="https://img.shields.io/badge/Logic%20Apps-0078D4?style=flat&logo=logic-apps&logoColor=white" alt="Logic Apps"/>
-  <img src="https://img.shields.io/badge/Log%20Analytics-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="Log Analytics"/>
-  <img src="https://img.shields.io/badge/Microsoft%20Purview-0078D4?style=flat&logo=microsoftazure&logoColor=white" alt="Purview"/>
-  <img src="https://img.shields.io/badge/Bicep-0078D4?style=flat&logo=bicep&logoColor=white" alt="Bicep"/>
-</p>
-
+![Azure](https://img.shields.io/badge/Azure-Data%20Engineering-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Azure Data Factory](https://img.shields.io/badge/Azure%20Data%20Factory-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Azure Synapse Analytics](https://img.shields.io/badge/Azure%20Synapse%20Analytics-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Event Hubs](https://img.shields.io/badge/Event%20Hubs-0078D4?style=flat&logo=azure-event-hubs&logoColor=white)
+![Logic Apps](https://img.shields.io/badge/Logic%20Apps-0078D4?style=flat&logo=logic-apps&logoColor=white)
+![Log Analytics](https://img.shields.io/badge/Log%20Analytics-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Microsoft Purview](https://img.shields.io/badge/Microsoft%20Purview-0078D4?style=flat&logo=microsoftazure&logoColor=white)
+![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat&logo=bicep&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-%23FFBF00)
+
 ## 🏗️ Lambda Architecture & Platform Mapping
 
 The platform implements a Lambda Architecture to handle both metadata-driven batch historical data and real-time fleet telemetry streams using the Azure Ecosystem.
