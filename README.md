@@ -8,9 +8,10 @@
 ![Log Analytics](https://img.shields.io/badge/Log%20Analytics-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 ![Microsoft Purview](https://img.shields.io/badge/Microsoft%20Purview-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat&logo=bicep&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-Green)
-
+![Status](https://img.shields.io/badge/Status-Completed-Green)## Problem Statement
+---
 ## Problem Statement
+
 A fleet management company receives vehicle telemetry (speed, fuel, engine temperature, GPS location) from two sources: periodic batch files dropped to an SFTP server by on-vehicle hardware, and a real-time stream as vehicles report live status. The legacy approach to this kind of ingestion is typically a single brittle script that fails silently, has no governance layer, and gives operations teams no visibility into which vehicles are overspeeding or running low on fuel until someone manually opens a spreadsheet.
 This project rebuilds that pipeline as a modern, observable, governed Azure data platform — handling both ingestion patterns (batch and streaming), enforcing data quality through a layered medallion architecture, and exposing clean, business-ready metrics through a SQL serving layer.
 ---
@@ -52,11 +53,12 @@ fleet-data-platform-modernisation/
 ## How to deploy
 How to Deploy
 All infrastructure is provisioned via a single Bicep template.
-`az group create --name rg-fleet-platform-prod --location uksouth
+```bash
+az group create --name rg-fleet-platform-prod --location uksouth
 
 az deployment group create \
   --resource-group rg-fleet-platform-prod \
-  --template-file infra/main.bicep
+  --template-file infra/main.bicep```
 This provisions: ADLS Gen2 (with bronze/silver/gold containers), Azure Data Factory, Event Hubs namespace and hub, Key Vault, Log Analytics workspace, Synapse workspace, and Logic App.
 After deployment, role assignments are required for managed identities to access Key Vault, Storage, and ADF — see docs/runbook/runbook.md for the full sequence.
 ---
