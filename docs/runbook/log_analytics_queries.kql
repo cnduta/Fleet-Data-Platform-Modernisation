@@ -1,0 +1,6 @@
+```kql
+ADFPipelineRun
+| where Status_s == "Failed"
+| project TimeGenerated, PipelineName_s, RunId_g, Status_s, Message_s
+| order by TimeGenerated desc
+```
